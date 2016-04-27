@@ -286,6 +286,6 @@ The Environment File with Role Cookbook version pins:
 Notes: In other articles and discussion circles you may sometimes hear the words "Role Cookbooks"
 and "Environment Cookbooks" used interchangeably.
 
-Credits / Further Reading:
+Much of this was cribbed from:
 - http://blog.vialstudios.com/the-environment-cookbook-pattern/
 - https://www.chef.io/blog/2013/11/19/chef-roles-arent-evil/
