@@ -242,10 +242,10 @@ Sometimes a Chef Role may be created to house the Role Cookbook.  However, it
 should NOT contain any attribute overrides and anything other than one
 run_list entry: the Role Cookbook.  This is important because Chef Roles are not
 versioned.  Changing a Chef Role immediately affects ALL nodes across all
-environments.  Allow the Role Cookbook to version the run_list and dependency
-pinnnings.
+environments that have the Role applied. Instead, allow the Role Cookbook to version
+the run_list and dependency pinnnings.
 
-Example Role:
+Example Chef Role:
 ```
 {
   "name": "acme-finance-web",
@@ -264,15 +264,46 @@ Example Role:
 }
 ```
 
-The Environment File with Role Cookbook version pins:
+Finally, the Chef Environment Files with Role Cookbook version pins:
+```
+{
+    "name": "Dev",
+    "description": "This is the Dev.  The latest and greatest versions.",
+    "cookbook_versions": {
+    },
+    "json_class": "Chef::Environment",
+    "chef_type": "environment",
+    "default_attributes": {
+    },
+    "override_attributes": {
+    }
+}
+```
 ```
 {
     "name": "Staging",
     "description": "This is the Staging pre-production environment.",
     "cookbook_versions": {
-        "acme-finance-web": "= 1.0.2",
-        "acme-marketing-web": "= 0.1.2",
-        "acme-sales-pos": "= 0.1.1"
+        "acme-finance-web": "= 1.2.1",
+        "acme-marketing-web": "= 0.2.8",
+        "acme-sales-pos": "= 0.1.9"
+    },
+    "json_class": "Chef::Environment",
+    "chef_type": "environment",
+    "default_attributes": {
+    },
+    "override_attributes": {
+    }
+}
+```
+```
+{
+    "name": "Prod",
+    "description": "This is the Production environment.",
+    "cookbook_versions": {
+        "acme-finance-web": "= 1.0.1",
+        "acme-marketing-web": "= 0.1.0",
+        "acme-sales-pos": "= 0.1.0"
     },
     "json_class": "Chef::Environment",
     "chef_type": "environment",
