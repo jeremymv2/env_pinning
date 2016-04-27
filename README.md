@@ -284,9 +284,9 @@ Finally, the Chef Environment Files with Role Cookbook version pins:
     "name": "Staging",
     "description": "This is the Staging pre-production environment.",
     "cookbook_versions": {
-        "acme-finance-web": "= 1.2.1",
-        "acme-marketing-web": "= 0.2.8",
-        "acme-sales-pos": "= 0.1.9"
+        "acme-finance-web": "= 1.4.1",
+        "acme-marketing-web": "= 1.1.8",
+        "acme-sales-pos": "= 0.10.9"
     },
     "json_class": "Chef::Environment",
     "chef_type": "environment",
