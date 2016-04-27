@@ -243,7 +243,7 @@ should NOT contain any attribute overrides and anything other than one
 run_list entry: the Role Cookbook.  This is important because Chef Roles are not
 versioned.  Changing a Chef Role immediately affects ALL nodes across all
 environments that have the Role applied. Instead, allow the Role Cookbook to version
-the run_list and dependency pinnnings and perhaps override attributes.
+the run_list and dependency pins and perhaps override attributes.
 
 Example Chef Role:
 ```
