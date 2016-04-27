@@ -234,8 +234,8 @@ depends 'finance-cookbook', '= 2.3.1'
 Example Default Recipe of the Role Cookbook:
 ```
 include_recipe 'acme-base-linux'
+include_recipe 'finance-application::keys'
 include_recipe 'finance-application::web'
-include_recipe 'finance-application::db'
 ```
 
 Sometimes a Chef Role may be created to house the Role Cookbook.  However, it
