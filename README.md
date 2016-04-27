@@ -55,11 +55,11 @@ Team cookbooks in Chef Environments by carving out a uniquely named "Role" for
 them, version Pinning that "Role Cookbook" in the Environment and allowing the
 teams to manage all dependencies within their Role Cookbook. This allows Teams
 more autonomy to move at varying speeds promoting artifacts across Chef
-Environments without fear of hitting an unresolvable dependency constraint
-imposed by another Team or Group. It significantly lessons the burdens on the
-Chef Administrators / DevOps champions who do NOT have "police" cookbook
-promotion, allowing the whole Organization to begin autonomously developing
-with Chef.
+Environments without fear of a suprise unresolvable dependency constraint
+imposed by another Team or Group when they promote into a new Environment.
+It significantly lessons the burdens on the Chef Administrators / DevOps
+champions who do NOT have "police" cookbook promotion, allowing the whole 
+Organization to begin autonomously developing with Chef.
 
 An organization's pipeline should be able to "promote" these Role Cookbooks from
 one environment to the next after each dependent component passes comprehensive
