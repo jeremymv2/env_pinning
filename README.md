@@ -48,7 +48,10 @@ strategy will simply not scale.
 
 A much easier approach to managing this is to allow for a "Opt-in" style where
 Team A and Team B are able to move to newer versions of "library-z" only when
-they are ready and after thorough testing.
+they are ready and after thorough testing.  The latest version of "library-z"
+cookbook exists in all environments because there are no Chef Environment version
+constraints for it. The "library-z" version constraints are encapsulated in consuming
+cookbook's metadata.rb.
 
 This requires an approach of only managing version constraints for individual
 Team cookbooks in Chef Environments by carving out a uniquely named "Role" for
