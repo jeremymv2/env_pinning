@@ -268,6 +268,8 @@ Example Chef Role:
 ```
 
 Finally, the Chef Environment Files with Role Cookbook version pins:
+
+This Development Environment has no constraints - latest versions get used.
 ```
 {
     "name": "Dev",
@@ -282,6 +284,8 @@ Finally, the Chef Environment Files with Role Cookbook version pins:
     }
 }
 ```
+
+Staging Environment with equality version contraints.
 ```
 {
     "name": "Staging",
@@ -299,6 +303,8 @@ Finally, the Chef Environment Files with Role Cookbook version pins:
     }
 }
 ```
+
+Production Environment with equality version contraints.
 ```
 {
     "name": "Prod",
