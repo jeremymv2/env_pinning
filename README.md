@@ -61,7 +61,7 @@ more autonomy to move at varying speeds promoting artifacts across Chef
 Environments without fear of a suprise unresolvable dependency constraint
 imposed by another Team or Group when they promote into a new Environment.
 It significantly lessons the burdens on the Chef Administrators / DevOps
-Champions who then to not have to "police" cookbook promotion, allowing the whole 
+Champions who then do not have to "police" cookbook promotion, allowing the whole 
 Organization to begin autonomously developing with Chef.
 
 An organization's pipeline should be able to "promote" these Role Cookbooks from
