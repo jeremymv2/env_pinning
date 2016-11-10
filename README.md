@@ -17,9 +17,9 @@ A Chef Environment can be represented via json like this:
     "name": "Staging",
     "description": "This is the Staging pre-production environment.",
     "cookbook_versions": {
-        "acme-finance-web": "= 1.0.2",
-        "acme-marketing-web": "= 0.1.2",
-        "acme-sales-pos": "= 0.1.1"
+        "acme_finance_web": "= 1.0.2",
+        "acme_marketing_web": "= 0.1.2",
+        "acme_sales_pos": "= 0.1.1"
     },
     "json_class": "Chef::Environment",
     "chef_type": "environment",
@@ -40,17 +40,17 @@ For more on Versioning see: http://semver.org
 It may be tempting to use the Chef Environment to constrain every cookbook
 that exists.  However, this will lead to version dependency nightmares.
 
-For example, if Team A has Cookbook "team-a", and Team B has Cookbook "team-b"
-and both of them depend upon a shared Library Cookbook: "library-z" which happens
+For example, if Team A has Cookbook "team_a", and Team B has Cookbook "team_b"
+and both of them depend upon a shared Library Cookbook: "library_z" which happens
 to be constrained in an Environment with an equality constraint; any new Release
-of "library-z" will need to be coordinated across both Team A and Team B.  This
+of "library_z" will need to be coordinated across both Team A and Team B.  This
 strategy will simply not scale.
 
 A much easier approach to managing this is to allow for a "Opt-in" style where
-Team A and Team B are able to move to newer versions of "library-z" only when
-they are ready and after thorough testing.  The latest version of "library-z"
+Team A and Team B are able to move to newer versions of "library_z" only when
+they are ready and after thorough testing.  The latest version of "library_z"
 cookbook exists in all environments because there are no Chef Environment version
-constraints for it. The "library-z" version constraints are encapsulated in consuming
+constraints for it. The "library_z" version constraints are encapsulated in consuming
 cookbook's metadata.rb.
 
 This requires an approach of only managing version constraints for individual
@@ -126,7 +126,7 @@ Every Application cookbook should live in it's own version control repository.
 This is the lightest Cookbook out of all the known Cookbook patterns. It does a
 very simple job of depending on an Application Cookbook and then exposing a
 recipe for each recipe found in the Application Cookbook that it is wrapping. In
-these recipes a single call to include_recipe "{wrapped-cookbook}::{wrapped-recipe}"
+these recipes a single call to include_recipe "{wrapped_cookbook}::{wrapped-recipe}"
 will be found along with a number of node.set[] functions which override the
 default values of the wrapped Cookbook.
 
@@ -152,22 +152,22 @@ specific to your organization and shouldn't be shared with anyone else.
 Base Cookbooks may depend on Library Cookbooks, Application Cookbooks, or Wrapper
 Cookbooks. They never depend on an Role Cookbook.
 
-These cookbooks follow the naming convention {organization}-base.
+These cookbooks follow the naming convention {organization}_base.
 Every Base cookbook should live in it's own version control repository.
 
 Example metatdata.rb of a Base Cookbook:
 ```
-name             'acme-base-linux'
+name             'acme_base_linux'
 maintainer       'Acme Co., Inc'
 maintainer_email 'devops@acme.com'
 license          '# Copyright (c) 2016 Acme Co., Inc, All Rights Reserved.'
-description      'Installs/Configures acme-base-linux'
+description      'Installs/Configures acme_base_linux'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 
 version          '2.0.4'
 
-source_url 'https://github.com/acme/acme-base-linux'
-issues_url 'https://github.com/acme/acme-base-linux/issues'
+source_url 'https://github.com/acme/acme_base_linux'
+issues_url 'https://github.com/acme/acme_base_linux/issues'
 
 depends 'chef-client', '= 4.3.3'
 depends 'chef-handler-profiler', '= 1.0.1'
@@ -223,11 +223,11 @@ Be sure to include the "base" cookbook if you have one.
 
 Example metatdata.rb of a Role Cookbook:
 ```
-name             'acme-finance-web'
+name             'acme_finance_web'
 maintainer       'Acme Finance'
 maintainer_email 'finance-devs@acme.com'
 license          'All rights reserved'
-description      'Role cookbook for finance-web application'
+description      'Role cookbook for finance_web application'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '1.0.2'
 
@@ -236,9 +236,9 @@ depends 'finance-cookbook', '= 2.3.1'
 ```
 Example Default Recipe of the Role Cookbook:
 ```
-include_recipe 'acme-base-linux'
-include_recipe 'finance-application::keys'
-include_recipe 'finance-application::web'
+include_recipe 'acme_base_linux'
+include_recipe 'finance_application::keys'
+include_recipe 'finance_application::web'
 ```
 
 Sometimes a Chef Role may be created to house the Role Cookbook.  However, it
@@ -251,7 +251,7 @@ the run_list and dependency pins and perhaps override attributes.
 Example Chef Role:
 ```
 {
-  "name": "acme-finance-web",
+  "name": "acme_finance_web",
   "description": "Installs and configures all components for a Finance Web server.",
   "json_class": "Chef::Role",
   "default_attributes": {
@@ -260,7 +260,7 @@ Example Chef Role:
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[acme-finance-web]"
+    "recipe[acme_finance_web]"
   ],
   "env_run_lists": {
   }
@@ -291,9 +291,9 @@ Staging Environment with equality version contraints.
     "name": "Staging",
     "description": "This is the Staging pre-production environment.",
     "cookbook_versions": {
-        "acme-finance-web": "= 1.4.1",
-        "acme-marketing-web": "= 1.1.8",
-        "acme-sales-pos": "= 0.10.9"
+        "acme_finance_web": "= 1.4.1",
+        "acme_marketing_web": "= 1.1.8",
+        "acme_sales_pos": "= 0.10.9"
     },
     "json_class": "Chef::Environment",
     "chef_type": "environment",
@@ -310,9 +310,9 @@ Production Environment with equality version contraints.
     "name": "Prod",
     "description": "This is the Production environment.",
     "cookbook_versions": {
-        "acme-finance-web": "= 1.0.1",
-        "acme-marketing-web": "= 0.1.0",
-        "acme-sales-pos": "= 0.1.0"
+        "acme_finance_web": "= 1.0.1",
+        "acme_marketing_web": "= 0.1.0",
+        "acme_sales_pos": "= 0.1.0"
     },
     "json_class": "Chef::Environment",
     "chef_type": "environment",
