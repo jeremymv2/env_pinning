@@ -133,8 +133,8 @@ default values of the wrapped Cookbook.
 Wrapper cookbooks depend on Application Cookbooks only. They do not depend on
 other Wrapper Cookbooks, Library Cookbooks, or Role Cookbooks.
 
-These cookbooks follow the naming convention {organization}_{wrapped_cookbook}
-or even sometimes {application}_{wrapped_cookbook}.
+These cookbooks follow the naming convention `{organization}_{wrapped_cookbook}`
+or even sometimes `{application}_{wrapped_cookbook}`.
 
 Every Wrapper cookbook should live in it's own version control repository.
 
@@ -231,8 +231,8 @@ description      'Role cookbook for finance_web application'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '1.0.2'
 
-depends 'acme-base-linux', '~> 1.1.0'
-depends 'finance-cookbook', '= 2.3.1'
+depends 'acme_base_linux', '~> 1.1.0'
+depends 'finance_cookbook', '= 2.3.1'
 ```
 Example Default Recipe of the Role Cookbook:
 ```
