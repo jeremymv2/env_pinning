@@ -133,8 +133,8 @@ default values of the wrapped Cookbook.
 Wrapper cookbooks depend on Application Cookbooks only. They do not depend on
 other Wrapper Cookbooks, Library Cookbooks, or Role Cookbooks.
 
-These cookbooks follow the naming convention {organization}-{wrapped_cookbook}
-or even sometimes {application}-{wrapped_cookbook}.
+These cookbooks follow the naming convention {organization}_{wrapped_cookbook}
+or even sometimes {application}_{wrapped_cookbook}.
 
 Every Wrapper cookbook should live in it's own version control repository.
 
