@@ -61,7 +61,7 @@ more autonomy to move at varying speeds promoting artifacts across Chef
 Environments without fear of a suprise unresolvable dependency constraint
 imposed by another Team or Group when they promote into a new Environment.
 It significantly lessons the burdens on the Chef Administrators / DevOps
-Champions who then do not have to "police" cookbook promotion, allowing the whole 
+Champions who then do not have to "police" cookbook promotion, allowing the whole
 Organization to begin autonomously developing with Chef.
 
 An organization's pipeline should be able to "promote" these Role Cookbooks from
@@ -329,3 +329,7 @@ and "Environment Cookbooks" used interchangeably.
 Much of this was cribbed from:
 - http://blog.vialstudios.com/the-environment-cookbook-pattern/
 - https://www.chef.io/blog/2013/11/19/chef-roles-arent-evil/
+
+Diagram of Cookbook Patterns (thanks to Anthony Hodson!)
+
+![diagram](./role_cookbook_pattern.png)
