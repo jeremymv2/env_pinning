@@ -330,6 +330,6 @@ Much of this was cribbed from:
 - http://blog.vialstudios.com/the-environment-cookbook-pattern/
 - https://www.chef.io/blog/2013/11/19/chef-roles-arent-evil/
 
-Diagram of Cookbook Patterns (thanks to Anthony Hodson!)
+## Diagram of Cookbook Patterns (thanks to Anthony Hodson!)
 
 ![diagram](./role_cookbook_pattern.png)
