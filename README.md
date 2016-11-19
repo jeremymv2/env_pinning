@@ -11,6 +11,10 @@ A typical organization might have Infrastructure Environments like:
 - Staging
 - Prod
 
+<b>Note:</b> Application Environments are also a proven pattern, although
+automation is key to managing these as it won't scale manually.
+An example Application Chef Environment: "Sales-Staging"
+
 A Chef Environment can be represented via json like this:
 ```
 {
@@ -50,7 +54,7 @@ A much easier approach to managing this is to allow for a "Opt-in" style where
 Team A and Team B are able to move to newer versions of "library_z" only when
 they are ready and after thorough testing.  The latest version of "library_z"
 cookbook exists in all environments because there are no Chef Environment version
-constraints for it. The "library_z" version constraints are encapsulated in consuming
+constraints for it. The "library_z" version constraints are encapsulated in the consuming
 cookbook's metadata.rb.
 
 This requires an approach of only managing version constraints for individual
@@ -69,7 +73,8 @@ one environment to the next after each dependent component passes comprehensive
 automated unit, integration, regression, smoke and acceptance/functional tests
 of the whole stack.  Promotion entails the Pipeline adding or updating the Chef
 Environment constraint for the Role Cookbooks in an automated fashion.  Perhaps
-using a tool like Knife Spork: https://github.com/jonlives/knife-spork
+using a tool like Knife Spork: https://github.com/jonlives/knife-spork. Chef
+Automate's Workflow handles this automagically for you.
 
 Individual users should not have the permissions to manipulate Chef Environments
 directly. Rather, changes should be initiated through version control and pushed
