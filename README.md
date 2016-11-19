@@ -75,7 +75,7 @@ automated unit, integration, regression, smoke and acceptance/functional tests
 of the whole stack.  Promotion entails the Pipeline adding or updating the Chef
 Environment constraint for the Role Cookbooks in an automated fashion.  Perhaps
 using a tool like Knife Spork: https://github.com/jonlives/knife-spork. Chef
-Automate's Workflow handles this automagically for you.
+Automate's Workflow component handles this automagically for you.
 
 Individual users should not have the permissions to manipulate Chef Environments
 directly. Rather, changes should be initiated through version control and pushed
