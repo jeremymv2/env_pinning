@@ -93,7 +93,7 @@ Most basic build block. These are meant to be reusable and depended upon by othe
 Cookbooks to provide functionality.
 
 Library Cookbooks provide things like:
- - Adding LWRPs that abstract common functionality
+ - Adding [Custom Resources](https://docs.chef.io/custom_resources.html) that abstract common functionality
  - Including Libraries that add Ruby modules/classes for any depending cookbooks
 
 Generally these do not have attributes since there is nothing to configure
