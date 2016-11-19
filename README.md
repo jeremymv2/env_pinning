@@ -30,6 +30,7 @@ A Chef Environment can be represented via json like this:
     "default_attributes": {
     },
     "override_attributes": {
+      "ldap_server": "ldap-staging.acme.com"
     }
 }
 ```
