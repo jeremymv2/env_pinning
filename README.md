@@ -339,4 +339,4 @@ Much of this was cribbed from:
 
 ## Diagram of Cookbook Patterns (thanks to Anthony Hodson!)
 
-![diagram](./role_cookbook_pattern.png)
+![diagram](https://raw.githubusercontent.com/jeremymv2/env_pinning/master/role_cookbook_pattern.png)
