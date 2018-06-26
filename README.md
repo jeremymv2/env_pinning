@@ -3,7 +3,8 @@
 Creating Chef Environments to match your Infrastructure Environments allows
 you to speak the same language with other groups within your organization and
 lessens the overhead of managing constraints by keeping the number of
-Chef Environments to a bare minimum.
+Chef Environments to a bare minimum. This is a great pattern for something
+like a Jenkins Chef cookbook pipeline to utilize.
 
 A typical organization might have Infrastructure Environments like:
 
