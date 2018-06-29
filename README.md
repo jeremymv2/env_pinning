@@ -42,7 +42,7 @@ cookbook versions.
 
 For more on Versioning see: http://semver.org
 
-## Opt-in Will Scale Easier
+## Opt-in Will Scale
 It may be tempting to use the Chef Environment to constrain every cookbook
 that exists.  However, this will lead to version dependency nightmares.
 
@@ -80,7 +80,9 @@ Automate's Workflow component handles this automagically for you.
 
 Individual users should not have the permissions to manipulate Chef Environments
 directly. Rather, changes should be initiated through version control and pushed
-to the Chef Server via automation in the Pipeline.
+to the Chef Server via automation in the Pipeline. The Pipeline operates with a
+service account and is likely one of the few necessary accounts needed to be
+created on the Chef Server.
 
 To implement this, it is important to understand the Cookbook types.
 
@@ -334,10 +336,10 @@ Production Environment with equality version contraints.
 Notes: In other articles and discussion circles you may sometimes hear the words "Role Cookbooks"
 and "Environment Cookbooks" used interchangeably.
 
-Much of this was cribbed from:
+Much of this was cribbed from the resources below with my own thoughts liberally dispersed throughout:
 - http://blog.vialstudios.com/the-environment-cookbook-pattern/
 - https://www.chef.io/blog/2013/11/19/chef-roles-arent-evil/
 
-## Diagram of Cookbook Patterns (thanks to Anthony Hodson!)
+## Diagram of Cookbook Patterns (Credit: Anthony Hodson)
 
 ![diagram](https://raw.githubusercontent.com/jeremymv2/env_pinning/master/role_cookbook_pattern.png)
