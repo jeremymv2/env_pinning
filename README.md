@@ -121,6 +121,8 @@ These cookbooks almost always contain a set of attributes which act as the runti
 configuration for the cookbook. These attributes can do something like setting a
 port number or even describing the desired state of a service.
 
+Attribute precedence level Application cookbooks should always just be `default`.
+
 These cookbooks are always named after the application they manage.
 
 Application cookbooks may depend on Library Cookbooks and other Application
