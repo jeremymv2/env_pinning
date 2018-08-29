@@ -136,8 +136,8 @@ This is the lightest Cookbook out of all the known Cookbook patterns. It does a
 very simple job of depending on an Application Cookbook and then exposing a
 recipe for each recipe found in the Application Cookbook that it is wrapping. In
 these recipes a single call to include_recipe "{wrapped_cookbook}::{wrapped-recipe}"
-will be found along with a number of node.set[] functions which override the
-default values of the wrapped Cookbook.
+will be found along with a number of node.normal[] or node.override[] functions which
+override the default attribute values of the wrapped Cookbook. See [Chef Attributes](https://docs.chef.io/attributes.html#attribute-types).
 
 Wrapper cookbooks depend on Application Cookbooks only. They do not depend on
 other Wrapper Cookbooks, Library Cookbooks, or Role Cookbooks.
