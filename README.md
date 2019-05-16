@@ -64,7 +64,7 @@ Team cookbooks in Chef Environments by carving out a uniquely named "Role" for
 them, version Pinning that "Role Cookbook" in the Environment and allowing the
 teams to manage all dependencies within their Role Cookbook. This allows Teams
 more autonomy to move at varying speeds promoting artifacts across Chef
-Environments without fear of a suprise unresolvable dependency constraint
+Environments without fear of a surprise unresolvable dependency constraint
 imposed by another Team or Group when they promote into a new Environment.
 It significantly lessons the burdens on the Chef Administrators / DevOps
 Champions who then do not have to "police" cookbook promotion, allowing the whole
@@ -112,7 +112,7 @@ An example: https://github.com/chef-cookbooks/chef-ingredient
 These cookbooks are a level above Library cookbooks. They always contain at least
 one recipe (the default recipe) to install a particular piece of software sharing
 the same name as the cookbook. If the application the cookbook manages contains
-multiple components then each one is broken up into it's own recipe and the recipe
+multiple components then each one is broken up into its own recipe and the recipe
 is named after the component it will install. Things are broken up in this way so
 you could install various components spread across a number of nodes within an
 environment.
@@ -130,7 +130,7 @@ Cookbooks. They never depend on Role Cookbooks. They never depend on a Wrapper
 or Base Cookbook unless they are intended to be internal to your organization
 and will never be distributed to the Chef Community Site.
 
-Every Application cookbook should live in it's own version control repository.
+Every Application cookbook should live in its own version control repository.
 
 ## The Wrapper Cookbook
 
@@ -147,7 +147,7 @@ other Wrapper Cookbooks, Library Cookbooks, or Role Cookbooks.
 These cookbooks follow the naming convention `{organization}_{wrapped_cookbook}`
 or even sometimes `{application}_{wrapped_cookbook}`.
 
-Every Wrapper cookbook should live in it's own version control repository.
+Every Wrapper cookbook should live in its own version control repository.
 
 ## The Base Cookbook
 
@@ -164,7 +164,7 @@ Base Cookbooks may depend on Library Cookbooks, Application Cookbooks, or Wrappe
 Cookbooks. They never depend on an Role Cookbook.
 
 These cookbooks follow the naming convention {organization}_base.
-Every Base cookbook should live in it's own version control repository.
+Every Base cookbook should live in its own version control repository.
 
 Example metatdata.rb of a Base Cookbook:
 ```
@@ -219,7 +219,7 @@ end
 This is the piece that ties the release process of your development cycle
 together and allows you to release software that is easy to install and to configure.
 
-A Role Cookbook should not contain any logic of it's own - it should simply
+A Role Cookbook should not contain any logic of its own - it should simply
 include_recipe on the Application Cookbooks necessary.  One exception is that it
 can include logic about which nodes should get which services, and any
 orchestration that has to happen.  The version of the Role Cookbook will be
@@ -297,7 +297,7 @@ This Development Environment has no constraints - latest versions get used.
 }
 ```
 
-Staging Environment with equality version contraints.
+Staging Environment with equality version constraints.
 ```
 {
     "name": "Staging",
@@ -316,7 +316,7 @@ Staging Environment with equality version contraints.
 }
 ```
 
-Production Environment with equality version contraints.
+Production Environment with equality version constraints.
 ```
 {
     "name": "Prod",
